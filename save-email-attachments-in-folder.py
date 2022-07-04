@@ -26,7 +26,7 @@ print ('Reading Inbox, including Inbox Subfolders...')
 
 # Download a select attachment ---------------------------------------
 # Create a folder to capture attachments.
-outlook_export_folder = desktop + 'Outlook Export/'
+outlook_export_folder = f'{desktop}Outlook Export/'
 if not os.path.exists(outlook_export_folder): os.makedirs(outlook_export_folder)
 
 try:
@@ -43,25 +43,25 @@ try:
                 print('Saved file:', outfile_name1)
 
         except Exception as e:
-            print("type error: " + str(e))
+            print(f"type error: {str(e)}")
             x=1
 
 except Exception as e:
-    print("type error: " + str(e))
+    print(f"type error: {str(e)}")
     x=1
 
 #move files into dedicated folders depending on file type (like .png / .jpg)-----------------------------------------
 
 main_folder = os.listdir(outlook_export_folder)
-image_folder = outlook_export_folder + 'IMAGES/'
+image_folder = f'{outlook_export_folder}IMAGES/'
 if not os.path.exists(image_folder): os.makedirs(image_folder)
-ppt_folder = outlook_export_folder +  'PPTs/'
+ppt_folder = f'{outlook_export_folder}PPTs/'
 if not os.path.exists(ppt_folder): os.makedirs(ppt_folder)
-documents_folder = outlook_export_folder + 'DOCUMENTS/'
+documents_folder = f'{outlook_export_folder}DOCUMENTS/'
 if not os.path.exists(documents_folder): os.makedirs(documents_folder)
-email_folder = outlook_export_folder + 'EMAILS/'
+email_folder = f'{outlook_export_folder}EMAILS/'
 if not os.path.exists(email_folder): os.makedirs(email_folder)
-excel_folder = outlook_export_folder + 'EXCEL-CSV/'
+excel_folder = f'{outlook_export_folder}EXCEL-CSV/'
 if not os.path.exists(excel_folder): os.makedirs(excel_folder)
 
 
